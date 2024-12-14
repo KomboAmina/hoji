@@ -3,14 +3,8 @@ namespace Hoji\Core;
 
 class BaseModel{
 
-    /**
-     * paginator
-     */
+    
     public array $pagination;
-
-     /**
-      * now
-      */
 
     public string $now;
 
@@ -21,17 +15,5 @@ class BaseModel{
         $this->now=date("Y-m-d H:i:s");
 
     }
-
-    /**
-     * ip address
-     */
-
-     /**
-      * check if null or empty
-      */
-
-      /**
-       * get first name
-       */
 
 }

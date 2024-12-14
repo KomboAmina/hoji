@@ -1,5 +1,8 @@
+/*
+honorific eg Dr. Eng, etc*/
 CREATE TABLE `people`(
     id INT(11) NOT NULL AUTO_INCREMENT,
+    honorific VARCHAR(50),
     fullname VARCHAR(100) NOT NULL,
     role ENUM("client","admin") NOT NULL DEFAULT "client",
     totaltalks INT(11) NOT NULL DEFAULT 0,
