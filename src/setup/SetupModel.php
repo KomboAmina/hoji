@@ -6,4 +6,3 @@ class SetupModel extends \Hoji\Core\HojiModel{
     
 
 }
-

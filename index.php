@@ -29,6 +29,18 @@ if(empty($configErrors)){
 
     $app=new \Hoji\Core\Hoji();
 
+    if(method_exists($app->view,"load")){
+
+        $app->view->load();
+
+    }
+
+    else{
+
+        echo "<h1>Check the developer site.</h1><p>Hoji\Core\BaseView is missing a load() method.</p>";
+
+    }
+
 }
 else{
 

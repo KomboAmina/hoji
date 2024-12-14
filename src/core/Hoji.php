@@ -27,7 +27,7 @@ class Hoji{
 
         $this->controller=$this->getActiveController();
 
-        $this->view=new \Hoji\Core\BaseView();
+        $this->view=new \Hoji\Core\BaseView($this->controller,$this->route);
 
     }
 
