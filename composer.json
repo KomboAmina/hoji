@@ -5,7 +5,8 @@
     "require": {
         "phpmailer/phpmailer": "^6.9",
         "phpunit/phpunit": "^11.5",
-        "dompdf/dompdf": "^3.0"
+        "dompdf/dompdf": "^3.0",
+        "twbs/bootstrap": "^5.3"
     },
     "autoload": {
         "psr-4": {

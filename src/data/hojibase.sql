@@ -11,10 +11,16 @@ CREATE TABLE `contacttypes`(
     id INT(5) NOT NULL AUTO_INCREMENT,
     contacttype VARCHAR(50) NOT NULL,
     icon VARCHAR(100) NOT NULL DEFAULT "cog",
+    pattern VARCHAR(500) NOT NULL DEFAULT "https://www.{detail}",
 
     PRIMARY KEY(id),
     UNIQUE(contacttype)
 );
+
+INSERT INTO `contacttypes`(contacttype,icon,pattern)
+VALUES("email","<i class='las la-at'></i>","mailto:{detail}"),
+("phone","<i class='las la-mobile'></i>","tel:{detail}"),
+("whatsapp","<i class='las la-mobile'></i>","https://wa.me/{detail}");
 
 CREATE TABLE `contacts`(
     id INT(30) NOT NULL AUTO_INCREMENT,
