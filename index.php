@@ -27,7 +27,7 @@ foreach($configFiles as $configFile){
 
 if(empty($configErrors)){
 
-    
+    $app=new \Hoji\Core\Hoji();
 
 }
 else{

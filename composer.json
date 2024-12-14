@@ -15,7 +15,9 @@
             "Hoji\\": "src/",
             "Hoji\\Tests\\":"src/tests/",
             "Hoji\\Core\\":"src/core/",
-            "Hoji\\Tests\\Core\\":"src/tests/core/"
+            "Hoji\\Tests\\Core\\":"src/tests/core/",
+            "Hoji\\Setup\\":"src/setup/",
+            "Hoji\\Tests\\Setup\\":"src/tests/setup/"
         }
     },
     "authors": [

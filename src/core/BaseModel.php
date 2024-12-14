@@ -3,7 +3,6 @@ namespace Hoji\Core;
 
 class BaseModel{
 
-    
     public array $pagination;
 
     public string $now;
