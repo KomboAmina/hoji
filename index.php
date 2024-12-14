@@ -1,7 +1,47 @@
 <?php
 
-include_once "vendor".DIRECTORY_SEPARATOR."autoload.php";
+defined('DS') || define('DS',DIRECTORY_SEPARATOR);
 
-$model=new Hoji\Core\BaseModel();
+$configFiles=array(
+                    "vendor".DS."autoload.php",
+                    "src".DS."config".DS."include.php"
+                );
 
-var_dump($model);
+$configErrors=array();
+
+foreach($configFiles as $configFile){
+
+    if(file_exists($configFile)){
+
+        include_once $configFile;
+
+    }
+
+    else{
+
+        $configErrors[]="file not found: ".$configFile;
+
+    }
+
+}
+
+if(empty($configErrors)){
+
+    
+
+}
+else{
+
+    echo "<h1>Config Errors:</h1>";
+
+    echo "<ol>";
+
+    foreach($configErrors as $configError){
+
+        echo "<li>".$configError."</li>";
+
+    }
+
+    echo "</ol>";
+
+}

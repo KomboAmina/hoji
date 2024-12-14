@@ -14,8 +14,8 @@
         "psr-4": {
             "Hoji\\": "src/",
             "Hoji\\Tests\\":"src/tests/",
-            "Hoji\\Tests\\Core\\":"src/tests/core/",
-            "Hoji\\Core\\":"src/core/"
+            "Hoji\\Core\\":"src/core/",
+            "Hoji\\Tests\\Core\\":"src/tests/core/"
         }
     },
     "authors": [
