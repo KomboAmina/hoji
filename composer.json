@@ -1,0 +1,23 @@
+{
+    "name": "komboamina/hoji",
+    "description": "Meeting Scheduler Application.",
+    "type": "project",
+    "require": {
+        "phpmailer/phpmailer": "^6.9",
+        "phpunit/phpunit": "^11.5",
+        "dompdf/dompdf": "^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Hoji\\": "src/",
+            "Hoji\\Tests\\":"src/tests/",
+            "Hoji\\Core\\":"src/core/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Amina Kombo",
+            "email": "kombo.work@gmail.com"
+        }
+    ]
+}
