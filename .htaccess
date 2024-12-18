@@ -1,0 +1,11 @@
+php_value date.timezone 'Africa/Nairobi'
+
+RewriteEngine On 
+
+RewriteRule ^(calls|files)($|/) - [L]
+
+RewriteRule ^(.*)/(.*)/(.*)/$ index.php?route=$1&action=$2&target=$3 [QSA,L]
+
+RewriteRule ^(.*)/(.*)/$ index.php?route=$1&action=$2 [QSA,L]
+
+RewriteRule ^(.*)/$ index.php?route=$1 [QSA,L]

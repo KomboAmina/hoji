@@ -1,5 +1,9 @@
 <?php
 namespace Hoji\Core;
 
-class HojiModel extends BaseModel{}
+class HojiModel extends BaseModel{
+
+    
+
+}
 

@@ -35,9 +35,19 @@ class Hoji{
 
         $route=$this->routesModel->getDefaultRoute();
 
-        if(isset($_GET['levela']) && $this->routesModel->isValidRoute($_GET['route'])){
+        if(!$this->setupChecker->triggerSetup && !isset($_GET['route'])){
 
-            $route=$_GET['route'];
+            header("Location: ".URL.$this->routesModel->getDefaultRoute()."/");
+
+        }
+
+        if(isset($_GET['route']) && $this->routesModel->isValidRoute($_GET['route'])){
+
+            if($_GET['route']!==$route){
+
+                header("Location: ".URL.$route."/");
+
+            }
 
         }
 

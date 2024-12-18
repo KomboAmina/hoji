@@ -40,7 +40,7 @@ CREATE TABLE `contacts`(
 CREATE TABLE `mailers`(
     id INT(3) NOT NULL AUTO_INCREMENT,
     mailhost VARCHAR(50) NOT NULL DEFAULT "smtp.localhost",
-    mailaddress VARCHAR(255) NOT NULL DEFAULT "info@example.com"
+    mailaddress VARCHAR(255) NOT NULL DEFAULT "info@example.com",
     mailname VARCHAR(50) NOT NULL DEFAULT "Hoji Mailer",
     mailsecret TEXT,
     salt VARCHAR(32) NOT NULL,
@@ -60,7 +60,7 @@ CREATE TABLE `projects`(
     company VARCHAR(100),
     isactive BOOLEAN NOT NULL DEFAULT true,
     createdon TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    closedon TIMESTAMP,
+    closedon TIMESTAMP NULL,
     projectbody TEXT,
 
     PRIMARY KEY(id),
@@ -75,7 +75,7 @@ CREATE TABLE `projectclients`(
 
     PRIMARY KEY(id),
     FOREIGN KEY(projectid) REFERENCES `projects`(id),
-    FOREIGN KEY(clientid) REFERENCES `clients`(id)
+    FOREIGN KEY(clientid) REFERENCES `people`(id)
 );
 
 CREATE TABLE `templates`(
@@ -93,7 +93,7 @@ CREATE TABLE `meetings`(
     projectid INT(11) NOT NULL,
     templateid INT(11) NOT NULL,
     startdate TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    stopdate TIMESTAMP,
+    stopdate TIMESTAMP NULL,
     title VARCHAR(100) NOT NULL,
     meetingbody TEXT,
     status ENUM('pending','completed','canceled') NOT NULL DEFAULT 'pending',
@@ -123,7 +123,7 @@ CREATE TABLE `emails`(
     subject VARCHAR(500) NOT NULL,
     message TEXT,
     createdon TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    sendon TIMESTAMP,
+    sendon TIMESTAMP NULL,
     status ENUM('pending','sent','bounced') NOT NULL DEFAULT 'pending',
 
     PRIMARY KEY(id),

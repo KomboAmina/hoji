@@ -19,14 +19,6 @@ class SetupChecker{
 
     public function checkNeedsSetup():bool{
 
-        /**
-         * check htaccess file exists
-         * 
-         * check src/config/basic.php is empty
-         * 
-         * check src/config/database.php is empty
-         */
-
         $htAccessFileExists=$this->htAccessFileExists();
 
         $configBasicFileExists=$this->configFileIsValid("src".DS."config".DS."basic.php");
@@ -45,12 +37,9 @@ class SetupChecker{
 
     protected function isFileEmpty(string $fileURL):bool{
 
-        clearstatcache($fileURL);
+        $contents=file_get_contents($fileURL);
 
-        $fileSize=filesize($fileURL);
-
-        return !$fileSize>0;
-
+        return strlen($contents)<1;
 
     }
 
@@ -66,13 +55,29 @@ class SetupChecker{
 
         }
 
-        return $isEmpty && $fileExists;
+        return !($isEmpty && $fileExists);
 
     }
 
     protected function getSetupStep():int{
 
         $step=0;
+
+        if(!$this->htAccessFileExists()){
+
+            $step=1;
+
+        }
+
+        else{
+
+            if(!$this->configFileIsValid("src".DS."config".DS."database.php")){
+
+                $step=2;
+
+            }
+
+        }
 
         return $step;
 

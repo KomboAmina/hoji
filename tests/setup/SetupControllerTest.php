@@ -20,6 +20,5 @@ class SetupControllerTest extends TestCase{
         $this->assertObjectHasProperty("setupChecker",$controller);
 
     }
-    
 
 }
